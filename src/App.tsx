@@ -12,28 +12,34 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Descubra sua idade</h1>
+    <div className="main">
+      <h1 className="title">Descubra sua idade</h1>
 
-      <h3>Digite seu nome</h3>
+      <p>Digite seu nome</p>
       <input
+        className="input"
         placeholder="Digite seu nome..."
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
       />
-      <h3>Digite o ano em que você nasceu</h3>
+      <p>Digite o ano em que você nasceu</p>
       <input
-        type="text"
+        className="input"
         placeholder="Seu ano de nascimento..."
         value={inputYear}
         onChange={(e) => setInputYear(e.target.value)}
       />
-      <input type="button" value="Descobrir idade" onClick={Calc} />
+      <input
+        type="button"
+        className="button"
+        value="Descobrir idade"
+        onClick={Calc}
+      />
 
       {calc !== 0 && (
-        <p>
+        <h3 className="result">
           Olá {inputName}, você tem {calc} anos
-        </p>
+        </h3>
       )}
     </div>
   );
